@@ -1,25 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Qrscan from './Qrscan';
+// import PriceTag from './PriceTag';
+import ScannedDetails from '../src/screens/scan_details.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+        {/* scanner */}
+          {/* <Route path='/' element={<PriceTag />}/> */}
+          <Route path='/' element={<Qrscan/>}/>
+          <Route path='scanneddetails' element={<ScannedDetails/>}></Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
